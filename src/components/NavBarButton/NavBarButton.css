@@ -1,0 +1,13 @@
+.navbar-button {
+  cursor: pointer;
+  padding: 1.75em 1em;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-button:hover {
+  background-color: var(--color-2);
+  color: white;
+  transition: ease-in 0.1s;
+}
