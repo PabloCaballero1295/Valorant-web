@@ -1,0 +1,16 @@
+.agents-container {
+  background-color: var(--color-2);
+}
+
+.agents-title {
+  font-size: 3em;
+  padding-top: 1em;
+  margin-bottom: 1em;
+  color: var(--color-4);
+  text-align: center;
+}
+
+.agents-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
+}

@@ -1,0 +1,34 @@
+.agent-card-container {
+  background-color: var(--color-1);
+  margin: 0.5em 0.75em;
+  border-radius: 0.25em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.agent-image-container {
+  width: 18em;
+  height: 30em;
+  overflow: hidden;
+}
+
+.agent-image {
+  object-fit: cover;
+  width: 18em;
+  height: 50em;
+  margin-top: -4em;
+}
+
+.agent-image:hover {
+  transition: transform 0.2s;
+  transform: scale(1.15);
+}
+
+.agent-name {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 0.1em;
+  padding-bottom: 0.25em;
+  background-color: var(--color-4);
+}
