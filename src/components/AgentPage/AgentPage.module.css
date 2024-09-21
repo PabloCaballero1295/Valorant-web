@@ -1,0 +1,50 @@
+.agent_image {
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+  z-index: 2;
+}
+
+.agent_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: fill;
+  transform: scale(1.25);
+  height: 100%;
+
+  right: 0;
+  text-align: center;
+  transform: scale(1.25) translate(25%, 0);
+  filter: opacity(0.7);
+}
+
+.agent_top_content {
+  display: flex;
+  background-color: var(--color-1);
+  overflow: hidden;
+}
+
+.left_content {
+  width: 50%;
+  padding-left: 4rem;
+}
+
+.right_content {
+  position: relative;
+  width: 50%;
+  height: fit-content;
+}
+
+.agent_name {
+  font-family: fantasy;
+  font-size: 4em;
+  font-style: italic;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.agent_desc {
+  font-size: 1.5em;
+}

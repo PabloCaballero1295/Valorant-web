@@ -25,11 +25,13 @@ a {
 
 .agent-name {
   font-size: 2em;
-  text-align: center;
+  text-align: left;
   font-weight: 700;
   padding-top: 0.1em;
   padding-bottom: 0.25em;
+  padding-left: 1rem;
   background-color: var(--color-4);
   text-decoration: none !important;
   color: black;
+  text-transform: uppercase;
 }

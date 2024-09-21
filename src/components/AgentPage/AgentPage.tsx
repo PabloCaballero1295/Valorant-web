@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Agent } from "../../types/agent"
+import styles from "./AgentPage.module.css"
 
 export const AgentPage = () => {
   const params = useParams()
@@ -21,8 +22,16 @@ export const AgentPage = () => {
     <>
       {!isLoading && data ? (
         <div className="container">
-          <div>{data?.displayName}</div>
-          <div>{data.description}</div>
+          <div className={styles.agent_top_content}>
+            <div className={styles.left_content}>
+              <div className={styles.agent_name}>{data.displayName}</div>
+              <div className={styles.agent_desc}>{data.description}</div>
+            </div>
+            <div className={styles.right_content}>
+              <img className={styles.agent_background} src={data.background} />
+              <img className={styles.agent_image} src={data.fullPortrait} />
+            </div>
+          </div>
         </div>
       ) : null}
     </>
