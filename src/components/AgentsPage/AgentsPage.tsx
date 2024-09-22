@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./AgentsPage.css"
+import styles from "./AgentsPage.module.css"
 import { AgentCard } from "../AgentCard/AgentCard"
 
 import { Agent } from "../../types/agent"
@@ -23,9 +23,9 @@ export const AgentsPage = () => {
   return (
     <div className="container">
       {data && !isLoading ? (
-        <div className="agents-container">
-          <div className="agents-title">AGENTES</div>
-          <div className="agents-list">
+        <div className={styles.agents_container}>
+          <div className={styles.agents_title}>AGENTES</div>
+          <div className={styles.agents_list}>
             {data.map((agent) => {
               return (
                 <AgentCard

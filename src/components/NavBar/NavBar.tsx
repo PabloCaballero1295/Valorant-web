@@ -1,32 +1,22 @@
 import { NavBarButton } from "../NavBarButton/NavBarButton"
-import "./NavBar.css"
+import styles from "./NavBar.module.css"
 import { DropdownMenu } from "../DropdownMenu/DropdownMenu"
+import { Link } from "react-router-dom"
 
 export const NavBar = () => {
-  function scrollToElement(id: string) {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
   return (
-    <div className="navbar">
-      <div className="navbar-content">
-        <div
-          className="navbar-left-content"
-          onClick={() => {
-            scrollToElement("home")
-          }}
-        >
-          VALORANT
+    <div className={styles.navbar}>
+      <div className={styles.navbar_content}>
+        <div className={styles.navbar_left_content}>
+          <Link to="/">Valorant</Link>
         </div>
 
-        <div className="navbar-right-content">
-          <NavBarButton text="Agentes" />
-          <NavBarButton text="Mapas" />
+        <div className={styles.navbar_right_content}>
+          <NavBarButton text="Agentes" to="/agents" />
+          <NavBarButton text="Mapas" to="/maps" />
         </div>
 
-        <div className="navbar-right-content-mobile">
+        <div className={styles.navbar_right_content_mobile}>
           <DropdownMenu />
         </div>
       </div>

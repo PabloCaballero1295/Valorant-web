@@ -1,8 +1,9 @@
-.agents-container {
-  background-color: var(--color-2);
+.agents_container {
+  background-color: var(--background-color-1);
+  padding-bottom: 2rem;
 }
 
-.agents-title {
+.agents_title {
   font-size: 3em;
   padding-top: 1em;
   margin-bottom: 1em;
@@ -11,7 +12,7 @@
   font-family: fantasy;
 }
 
-.agents-list {
+.agents_list {
   margin: 1em;
   display: grid;
   gap: 1em;
