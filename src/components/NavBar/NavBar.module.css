@@ -17,6 +17,21 @@
   justify-content: space-between;
 }
 
+.web_logo {
+  display: flex;
+}
+
+.web_name {
+  align-self: center;
+  margin-top: 0.1em;
+  margin-left: 0.5em;
+}
+
+.valorant_logo {
+  width: 2em;
+  vertical-align: middle;
+}
+
 .navbar_left_content {
   font-size: 1.2em;
   font-weight: bold;

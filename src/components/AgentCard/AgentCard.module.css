@@ -18,15 +18,15 @@ a {
   vertical-align: middle;
 }
 
-.agent_image:hover {
+.agent_card_container:hover .agent_image {
   transition: transform 0.2s;
   transform: scale(1.15);
 }
 
 .agent_name {
+  font-family: fantasy;
   font-size: 2em;
   text-align: left;
-  font-weight: 700;
   padding-top: 0.1em;
   padding-bottom: 0.25em;
   padding-left: 1rem;
@@ -34,4 +34,10 @@ a {
   text-decoration: none !important;
   color: black;
   text-transform: uppercase;
+}
+
+.agent_card_container:hover .agent_name {
+  color: white;
+  background-color: var(--color-2);
+  transition: ease-in 0.1s;
 }

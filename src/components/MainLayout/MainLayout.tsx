@@ -1,5 +1,6 @@
 import { Footer } from "../Footer/Footer"
 import { NavBar } from "../NavBar/NavBar"
+import styles from "./MainLayout.module.css"
 
 interface MainLayoutProps {
   children: JSX.Element
@@ -7,9 +8,9 @@ interface MainLayoutProps {
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div>
+    <div className={styles.main_layout}>
       <NavBar />
-      {children}
+      <div className={styles.main_layout_content}>{children}</div>
       <Footer />
     </div>
   )

@@ -61,7 +61,8 @@
 
 .role_title {
   text-align: center;
-  font-size: 01em;
+  font-size: 0.8em;
+  margin: 0.5rem 0;
 }
 
 .role_content {
@@ -73,25 +74,29 @@
 }
 
 .role_left_content {
+  border-radius: 0.75em;
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-transform: uppercase;
-  border: 1px solid var(--color-3);
+  /*border: 1px solid var(--color-3);*/
   background-color: var(--color-2);
   color: white;
+  box-shadow: 0 0 20px var(--color-1);
 }
 
 .role_image {
-  width: 2em;
+  width: 3em;
   padding: 0.5em;
   align-self: center;
 }
 
 .role_name {
   font-size: 1.1rem;
-  color: var(--color-4);
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(252, 214, 48);
 }
 
 .role_description {
