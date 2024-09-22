@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   vertical-align: middle;
-  z-index: 2;
+  z-index: 0;
 }
 
 .agent_background {
@@ -20,8 +20,9 @@
 }
 
 .agent_top_content {
+  color: var(--color-4);
   display: flex;
-  background-color: var(--color-1);
+  background-color: rgb(21 37 52);
   overflow: hidden;
 }
 
@@ -41,10 +42,102 @@
   font-size: 4em;
   font-style: italic;
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .agent_desc {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+}
+
+.role_container {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.role_title {
+  text-align: center;
+  font-size: 01em;
+}
+
+.role_content {
+  display: flex;
+}
+
+.role_left_container {
+  align-self: center;
+}
+
+.role_left_content {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 1px solid var(--color-3);
+  background-color: var(--color-2);
+  color: white;
+}
+
+.role_image {
+  width: 2em;
+  padding: 0.5em;
+  align-self: center;
+}
+
+.role_name {
+  font-size: 1.1rem;
+  color: var(--color-4);
+}
+
+.role_description {
+  margin-left: 1em;
+  align-self: center;
+}
+
+.abilities_container {
+  padding: 1rem 3rem;
+}
+
+.abilities_title {
+  font-family: fantasy;
+  font-size: 4em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.abilities_content {
+  display: grid;
+  gap: 2em;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
+  justify-content: space-around;
+}
+
+.ability {
+  display: flex;
+  flex-direction: column;
+}
+
+.ability_name {
+  font-family: fantasy;
+  font-size: 2em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ability_img {
+  margin: 0 25%;
+  width: auto;
+  filter: invert();
+}
+
+.ability_description {
+  padding: 0 2rem;
+  text-align: center;
 }
