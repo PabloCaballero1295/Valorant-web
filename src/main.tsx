@@ -6,6 +6,8 @@ import { MainPage } from "./components/MainPage/MainPage"
 import "./index.css"
 import { AgentsPage } from "./components/AgentsPage/AgentsPage"
 import { AgentPage } from "./components/AgentPage/AgentPage"
+import { MapsPage } from "./components/MapsPage/MapsPage"
+import { MapPage } from "./components/MapPage/MapPage"
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,22 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <AgentPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/maps",
+    element: (
+      <MainLayout>
+        <MapsPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/maps/:id",
+    element: (
+      <MainLayout>
+        <MapPage />
       </MainLayout>
     ),
   },

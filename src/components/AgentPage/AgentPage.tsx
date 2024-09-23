@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { Agent } from "../../types/agent"
 import styles from "./AgentPage.module.css"
 import { AbilityCard } from "../AbilityCard/AbilityCard"
+import { ScrollRestoration } from "react-router-dom"
 
 export const AgentPage = () => {
   const params = useParams()
@@ -78,6 +79,7 @@ export const AgentPage = () => {
           </div>
         </>
       ) : null}
+      <ScrollRestoration />
     </>
   )
 }

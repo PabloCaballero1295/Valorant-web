@@ -1,0 +1,112 @@
+.main_image {
+  width: 60%;
+  border: 1px solid var(--color-1);
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.top_content {
+  color: var(--color-4);
+  width: 100%;
+  background-color: var(--background-color-1);
+}
+
+.top_flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.name_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 4em;
+  font-family: fantasy;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+
+.coordinates {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.tactical_description {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.map_image_title {
+  font-family: fantasy;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.map_top_view_container {
+  width: 50%;
+}
+
+.map_top_view {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  max-height: 30em;
+  background-color: var(--background-color-1);
+  box-shadow: 0 0 10px var(--color-1);
+}
+
+.map_ingame_view_container {
+  width: 50%;
+}
+
+.map_ingame_view {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  max-height: 30em;
+  margin: auto;
+  box-shadow: 0 0 10px var(--color-1);
+}
+
+.map_images {
+  margin-top: 3em;
+  width: 100%;
+  display: flex;
+}
+
+.button_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.world_map_button {
+  display: block;
+  background-color: var(--color-1);
+  padding: 2em;
+  margin: auto;
+  color: white;
+  border-radius: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--color-1);
+}
+
+.map_container {
+  margin-bottom: 3em;
+}

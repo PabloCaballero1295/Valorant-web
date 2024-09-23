@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from "./AgentsPage.module.css"
 import { AgentCard } from "../AgentCard/AgentCard"
-
+import { ScrollRestoration } from "react-router-dom"
 import { Agent } from "../../types/agent"
 
 export const AgentsPage = () => {
@@ -41,6 +41,7 @@ export const AgentsPage = () => {
       ) : (
         <p>Loading</p>
       )}
+      <ScrollRestoration />
     </div>
   )
 }
