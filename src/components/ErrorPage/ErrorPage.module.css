@@ -1,0 +1,42 @@
+.error_page_container {
+  background-color: var(--color-1);
+  height: 100%;
+}
+
+.container {
+  background-color: var(--color-4);
+  box-shadow: 0 0 100px var(--color-3);
+  height: 100%;
+}
+
+.error_content {
+  padding: 2em;
+}
+
+.title {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.message {
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.error_image {
+  display: block;
+  margin: auto;
+}
+
+.button {
+  display: block;
+  color: white;
+  margin: auto;
+  margin-top: 3em;
+  padding: 1.5rem 2rem;
+  border-radius: 1em;
+  width: fit-content;
+  background-color: var(--color-1);
+}

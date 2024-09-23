@@ -1,8 +1,8 @@
 import styles from "./MainPage.module.css"
 import valorant_banner from "../../assets/valorant_banner.jpeg"
 import valorant_agents from "../../assets/VALORANT-Agents.jpg"
-import valorant_weapons from "../../assets/image_processing20230810-35-159f9vt.webp"
-import valorant_maps from "../../assets/Valroant-Maps-List-you-can-play.webp"
+import valorant_weapons from "../../assets/valorant_weapons.webp"
+import valorant_maps from "../../assets/valorant_maps.webp"
 import { Link } from "react-router-dom"
 
 export const MainPage = () => {

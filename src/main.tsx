@@ -8,6 +8,7 @@ import { AgentsPage } from "./components/AgentsPage/AgentsPage"
 import { AgentPage } from "./components/AgentPage/AgentPage"
 import { MapsPage } from "./components/MapsPage/MapsPage"
 import { MapPage } from "./components/MapPage/MapPage"
+import { ErrorPage } from "./components/ErrorPage/ErrorPage"
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     ),
     errorElement: (
       <MainLayout>
-        <div>Error 404</div>
+        <ErrorPage />
       </MainLayout>
     ),
   },
