@@ -18,6 +18,7 @@ export const NavBar = () => {
         <div className={styles.navbar_right_content}>
           <NavBarButton text="Agentes" to="/agents" />
           <NavBarButton text="Mapas" to="/maps" />
+          <NavBarButton text="Armas" to="/weapons" />
         </div>
 
         <div className={styles.navbar_right_content_mobile}>

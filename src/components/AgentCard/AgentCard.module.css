@@ -16,6 +16,8 @@ a {
   width: 100%;
   height: 100%;
   vertical-align: middle;
+  transition: transform 0.2s;
+  transform: scale(1);
 }
 
 .agent_card_container:hover .agent_image {

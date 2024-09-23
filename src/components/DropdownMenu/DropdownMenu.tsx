@@ -2,7 +2,8 @@ import { useState, useRef, MouseEvent } from "react"
 
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
-import "./DropdownMenu.css"
+import styles from "./DropdownMenu.module.css"
+import { Link } from "react-router-dom"
 
 export const DropdownMenu = () => {
   const menuButtonRef = useRef<HTMLDivElement>(null)
@@ -32,8 +33,33 @@ export const DropdownMenu = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem>Agentes</MenuItem>
-        <MenuItem>Mapas</MenuItem>
+        <MenuItem>
+          <Link
+            to="/agents"
+            onClick={handleClose}
+            className={styles.dropdown_link}
+          >
+            Agentes
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link
+            to="/agents"
+            onClick={handleClose}
+            className={styles.dropdown_link}
+          >
+            Mapas
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link
+            to="/agents"
+            onClick={handleClose}
+            className={styles.dropdown_link}
+          >
+            Armas
+          </Link>
+        </MenuItem>
       </Menu>
     </div>
   )

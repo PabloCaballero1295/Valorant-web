@@ -15,3 +15,7 @@
   align-items: center;
   justify-content: center;
 }
+.dropdown_link {
+  color: black;
+  text-decoration: none;
+}
