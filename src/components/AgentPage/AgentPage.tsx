@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Agent } from "../../types/agent"
 import styles from "./AgentPage.module.css"
+import { AbilityCard } from "../AbilityCard/AbilityCard"
 
 export const AgentPage = () => {
   const params = useParams()
@@ -64,18 +65,12 @@ export const AgentPage = () => {
                 <div className={styles.abilities_title}>SPECIAL ABILITIES</div>
                 <div className={styles.abilities_content}>
                   {data.abilities.map((ability) => (
-                    <div key={ability.slot} className={styles.ability}>
-                      <img
-                        className={styles.ability_img}
-                        src={ability.displayIcon}
-                      />
-                      <div className={styles.ability_name}>
-                        {ability.displayName}
-                      </div>
-                      <div className={styles.ability_description}>
-                        {ability.description}
-                      </div>
-                    </div>
+                    <AbilityCard
+                      key={ability.slot}
+                      image={ability.displayIcon}
+                      name={ability.displayName}
+                      description={ability.description}
+                    />
                   ))}
                 </div>
               </div>

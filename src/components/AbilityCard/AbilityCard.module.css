@@ -1,0 +1,36 @@
+.ability {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--color-3);
+}
+
+.ability_data {
+  background-color: var(--background-color-1);
+  flex: 1;
+}
+
+.ability_name {
+  font-family: fantasy;
+  font-size: 2em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-1);
+}
+
+.ability_img {
+  margin: 10% 25%;
+  width: auto;
+  filter: invert();
+}
+
+.ability_description {
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  color: white;
+}

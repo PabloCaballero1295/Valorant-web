@@ -80,7 +80,6 @@
   flex-direction: column;
   justify-content: center;
   text-transform: uppercase;
-  /*border: 1px solid var(--color-3);*/
   background-color: var(--color-2);
   color: white;
   box-shadow: 0 0 20px var(--color-1);
@@ -123,29 +122,4 @@
   width: 100%;
   grid-template-columns: repeat(2, minmax(0px, 1fr));
   justify-content: space-around;
-}
-
-.ability {
-  display: flex;
-  flex-direction: column;
-}
-
-.ability_name {
-  font-family: fantasy;
-  font-size: 2em;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.ability_img {
-  margin: 0 25%;
-  width: auto;
-  filter: invert();
-}
-
-.ability_description {
-  padding: 0 2rem;
-  text-align: center;
 }
