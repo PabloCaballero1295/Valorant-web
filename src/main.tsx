@@ -9,6 +9,7 @@ import { AgentPage } from "./components/AgentPage/AgentPage"
 import { MapsPage } from "./components/MapsPage/MapsPage"
 import { MapPage } from "./components/MapPage/MapPage"
 import { ErrorPage } from "./components/ErrorPage/ErrorPage"
+import { WeapongsPage } from "./components/WeaponsPage/WeaponsPage"
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,14 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <MapPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/weapons",
+    element: (
+      <MainLayout>
+        <WeapongsPage />
       </MainLayout>
     ),
   },

@@ -1,0 +1,51 @@
+.weapons_page_container {
+  padding-bottom: 3em;
+}
+
+.category_title {
+  font-family: fantasy;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.weapons_category_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  margin: 0 2em;
+  /*grid-template-columns: repeat(3, minmax(0px, 1fr));*/
+  justify-content: center;
+}
+
+.weapon_card {
+  display: flex;
+  flex-direction: column;
+  width: 22em;
+  box-shadow: 0 0 5px black;
+  background-color: rgba(1, 1, 1, 0.1);
+  /*border: 1px solid black;*/
+  border-radius: 1em;
+  margin: 1em 0.5em;
+  overflow: hidden;
+}
+
+.weapon_name {
+  color: var(--color-4);
+  background-color: var(--background-color-1);
+  font-size: 2em;
+  font-family: fantasy;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+
+.weapon_image {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 7em;
+  flex: 1;
+  padding: 2em 0;
+}
