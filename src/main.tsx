@@ -25,6 +25,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/error",
+    element: (
+      <MainLayout>
+        <ErrorPage />
+      </MainLayout>
+    ),
+  },
+  {
     path: "/agents",
     element: (
       <MainLayout>

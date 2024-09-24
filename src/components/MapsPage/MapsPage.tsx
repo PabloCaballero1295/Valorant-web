@@ -26,8 +26,8 @@ export const MapsPage = () => {
   }, [])
 
   return (
-    <div className={styles.maps_page_container}>
-      <div className="container">
+    <div className="container container_background">
+      <div className={styles.maps_page_content}>
         <div className={styles.maps_title}>Mapas</div>
         {!isLoading && data ? (
           <div className={styles.maps_container}>

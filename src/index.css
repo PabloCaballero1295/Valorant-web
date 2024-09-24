@@ -20,6 +20,11 @@
   margin: auto;
 }
 
+.container_background {
+  background-color: var(--color-4);
+  box-shadow: 0 0 100px var(--color-3);
+}
+
 body {
   /*font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
   font-family: Roboto, sans-serif;

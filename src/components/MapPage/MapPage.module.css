@@ -82,7 +82,9 @@
 }
 
 .map_images {
-  margin-top: 3em;
+  padding-top: 3em;
+  margin-left: 2em;
+  margin-right: 2em;
   width: 100%;
   display: flex;
 }
@@ -92,7 +94,7 @@
   display: flex;
   justify-content: center;
   margin-top: 4em;
-  margin-bottom: 4em;
+  padding-bottom: 4em;
 }
 
 .world_map_button {
@@ -105,8 +107,4 @@
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 0 10px var(--color-1);
-}
-
-.map_container {
-  margin-bottom: 3em;
 }

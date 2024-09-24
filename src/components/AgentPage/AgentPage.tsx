@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { Agent } from "../../types/agent"
 import styles from "./AgentPage.module.css"
 import { AbilityCard } from "../AbilityCard/AbilityCard"
@@ -10,15 +10,31 @@ export const AgentPage = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState<Agent>()
 
+  const navigate = useNavigate()
+
   useEffect(() => {
+    const abortController = new AbortController()
+    setIsLoading(true)
     fetch(`https://valorant-api.com/v1/agents/${params.id}?language=es-ES`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        return response.json()
+      })
       .then((agents) => {
         const agentdata: Agent = agents.data
         setData(agentdata)
         setIsLoading(false)
       })
-  }, [params.id])
+      .catch((error) => {
+        console.log(error)
+        navigate("/error")
+      })
+      .finally(() => setIsLoading(false))
+
+    return () => abortController.abort()
+  }, [params.id, navigate])
 
   return (
     <>
@@ -61,7 +77,7 @@ export const AgentPage = () => {
             </div>
           </div>
           <div>
-            <div className="container">
+            <div className="container container_background">
               <div className={styles.abilities_container}>
                 <div className={styles.abilities_title}>SPECIAL ABILITIES</div>
                 <div className={styles.abilities_content}>

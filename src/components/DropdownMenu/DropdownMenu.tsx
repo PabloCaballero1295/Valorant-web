@@ -44,7 +44,7 @@ export const DropdownMenu = () => {
         </MenuItem>
         <MenuItem>
           <Link
-            to="/agents"
+            to="/maps"
             onClick={handleClose}
             className={styles.dropdown_link}
           >
@@ -53,7 +53,7 @@ export const DropdownMenu = () => {
         </MenuItem>
         <MenuItem>
           <Link
-            to="/agents"
+            to="/weapons"
             onClick={handleClose}
             className={styles.dropdown_link}
           >

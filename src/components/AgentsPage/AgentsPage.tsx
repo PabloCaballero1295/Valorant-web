@@ -21,7 +21,7 @@ export const AgentsPage = () => {
   }, [])
 
   return (
-    <div className="container">
+    <div className="container container_background">
       {data && !isLoading ? (
         <div className={styles.agents_container}>
           <div className={styles.agents_title}>AGENTES</div>

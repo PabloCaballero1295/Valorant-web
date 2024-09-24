@@ -1,5 +1,6 @@
-.maps_page_container {
-  margin-bottom: 3em;
+.maps_page_content {
+  padding: 0 2em;
+  padding-bottom: 5em;
 }
 
 .maps_container {
@@ -11,7 +12,7 @@
 .maps_title {
   font-size: 3em;
   font-family: fantasy;
-  margin-top: 1em;
+  padding-top: 1em;
   margin-bottom: 1em;
   text-align: center;
   text-transform: uppercase;

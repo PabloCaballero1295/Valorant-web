@@ -29,7 +29,7 @@ export const MapPage = () => {
   return (
     <div>
       {!isLoading && data ? (
-        <div className={styles.map_container}>
+        <>
           <div
             className={styles.top_content}
             style={{ background: `url(${data.stylizedBackgroundImage})` }}
@@ -47,7 +47,7 @@ export const MapPage = () => {
               </div>
             </div>
           </div>
-          <div className="container">
+          <div className="container container_background">
             <div className={styles.map_images}>
               <div className={styles.map_top_view_container}>
                 <div className={styles.map_image_title}>Vista cenital</div>
@@ -74,7 +74,7 @@ export const MapPage = () => {
               </div>
             ) : null}
           </div>
-        </div>
+        </>
       ) : null}
 
       <ScrollRestoration />
