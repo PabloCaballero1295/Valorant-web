@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { Weapon } from "../../types/weapons"
 import styles from "./WeaponsPage.module.css"
+import { Loading } from "../Loading/Loading"
+import { ScrollRestoration } from "react-router-dom"
 
 export const WeapongsPage = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -41,14 +43,15 @@ export const WeapongsPage = () => {
   }, [])
 
   return (
-    <div className="container container_background">
-      {!isLoading && data
-        ? Object.entries(groupedItems).map(([category, itemsInCategory]) => (
+    <div>
+      {!isLoading && data ? (
+        <div className="container container_background">
+          {Object.entries(groupedItems).map(([category, itemsInCategory]) => (
             <div key={category} className={styles.weapons_page_container}>
               <div className={styles.category_title}>{category}</div>
               <div className={styles.weapons_category_container}>
                 {itemsInCategory.map((weapon) => (
-                  <div className={styles.weapon_card}>
+                  <div key={weapon.uuid} className={styles.weapon_card}>
                     <img
                       src={weapon.displayIcon}
                       className={styles.weapon_image}
@@ -60,8 +63,12 @@ export const WeapongsPage = () => {
                 ))}
               </div>
             </div>
-          ))
-        : null}
+          ))}
+        </div>
+      ) : (
+        <Loading />
+      )}
+      <ScrollRestoration />
     </div>
   )
 }

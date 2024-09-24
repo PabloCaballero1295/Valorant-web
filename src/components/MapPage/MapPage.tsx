@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { Map } from "../../types/map"
 import { ScrollRestoration } from "react-router-dom"
 import { getURLCoords } from "../../utils/utils"
+import { Loading } from "../Loading/Loading"
 
 export const MapPage = () => {
   const params = useParams()
@@ -27,7 +28,7 @@ export const MapPage = () => {
   }, [params.id])
 
   return (
-    <div>
+    <>
       {!isLoading && data ? (
         <>
           <div
@@ -75,9 +76,11 @@ export const MapPage = () => {
             ) : null}
           </div>
         </>
-      ) : null}
+      ) : (
+        <Loading />
+      )}
 
       <ScrollRestoration />
-    </div>
+    </>
   )
 }

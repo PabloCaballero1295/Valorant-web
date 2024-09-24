@@ -3,6 +3,7 @@ import { Map } from "../../types/map"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { ScrollRestoration } from "react-router-dom"
+import { Loading } from "../Loading/Loading"
 
 const blockeMaps = [
   "5914d1e0-40c4-cfdd-6b88-eba06347686c",
@@ -26,29 +27,34 @@ export const MapsPage = () => {
   }, [])
 
   return (
-    <div className="container container_background">
-      <div className={styles.maps_page_content}>
-        <div className={styles.maps_title}>Mapas</div>
-        {!isLoading && data ? (
-          <div className={styles.maps_container}>
-            {data.map((map) =>
-              blockeMaps.includes(map.uuid) ? null : (
-                <Link key={map.uuid} to={`/maps/${map.uuid}`}>
-                  <div className={styles.map_card}>
-                    <img
-                      className={styles.map_image}
-                      loading="lazy"
-                      src={map.listViewIcon}
-                    />
-                    <div className={styles.map_name}>{map.displayName}</div>
-                  </div>
-                </Link>
-              )
-            )}
+    <>
+      {!isLoading && data ? (
+        <div className="container container_background">
+          <div className={styles.maps_page_content}>
+            <div className={styles.maps_title}>Mapas</div>
+
+            <div className={styles.maps_container}>
+              {data.map((map) =>
+                blockeMaps.includes(map.uuid) ? null : (
+                  <Link key={map.uuid} to={`/maps/${map.uuid}`}>
+                    <div className={styles.map_card}>
+                      <img
+                        className={styles.map_image}
+                        loading="lazy"
+                        src={map.listViewIcon}
+                      />
+                      <div className={styles.map_name}>{map.displayName}</div>
+                    </div>
+                  </Link>
+                )
+              )}
+            </div>
           </div>
-        ) : null}
-      </div>
-      <ScrollRestoration />
-    </div>
+          <ScrollRestoration />
+        </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   )
 }

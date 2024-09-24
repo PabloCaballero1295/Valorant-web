@@ -3,6 +3,7 @@ import styles from "./AgentsPage.module.css"
 import { AgentCard } from "../AgentCard/AgentCard"
 import { ScrollRestoration } from "react-router-dom"
 import { Agent } from "../../types/agent"
+import { Loading } from "../Loading/Loading"
 
 export const AgentsPage = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -21,27 +22,29 @@ export const AgentsPage = () => {
   }, [])
 
   return (
-    <div className="container container_background">
+    <>
       {data && !isLoading ? (
-        <div className={styles.agents_container}>
-          <div className={styles.agents_title}>AGENTES</div>
-          <div className={styles.agents_list}>
-            {data.map((agent) => {
-              return (
-                <AgentCard
-                  key={agent.uuid}
-                  id={agent.uuid}
-                  name={agent.displayName}
-                  image={agent.displayIcon}
-                />
-              )
-            })}
+        <div className="container container_background">
+          <div className={styles.agents_container}>
+            <div className={styles.agents_title}>AGENTES</div>
+            <div className={styles.agents_list}>
+              {data.map((agent) => {
+                return (
+                  <AgentCard
+                    key={agent.uuid}
+                    id={agent.uuid}
+                    name={agent.displayName}
+                    image={agent.displayIcon}
+                  />
+                )
+              })}
+            </div>
           </div>
         </div>
       ) : (
-        <p>Loading</p>
+        <Loading />
       )}
       <ScrollRestoration />
-    </div>
+    </>
   )
 }
