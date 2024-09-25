@@ -2,13 +2,22 @@
   cursor: pointer;
   padding: 1.75em 1em;
   font-weight: bold;
-  color: #f9f9f9;
+  color: var(--color-4);
   text-decoration: none;
   text-transform: uppercase;
 }
 
+.navbar_button.active {
+  cursor: pointer;
+  padding: 1.75em 1em;
+  font-weight: bold;
+  color: var(--color-4);
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-2);
+}
+
 .navbar_button:hover {
   background-color: var(--color-2);
-  color: white;
   transition: ease-in 0.1s;
 }
