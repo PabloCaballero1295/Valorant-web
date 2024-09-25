@@ -37,3 +37,12 @@
   color: white;
   margin: auto;
 }
+
+@media (width < 600px) {
+  .ability_description {
+    font-size: 0.8em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-bottom: 2em;
+  }
+}

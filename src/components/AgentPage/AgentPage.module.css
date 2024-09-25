@@ -123,3 +123,108 @@
   grid-template-columns: repeat(2, minmax(0px, 1fr));
   justify-content: space-around;
 }
+
+@media (width < 600px) {
+  .agent_top_content {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .right_content {
+    width: 100%;
+  }
+
+  .left_content {
+    width: auto;
+    padding: 0 1em;
+  }
+
+  .agent_name {
+    font-size: 3em;
+    margin-top: 0;
+  }
+
+  .abilities_title {
+    font-size: 3em;
+  }
+
+  .abilities_container {
+    padding: 1em 1em;
+  }
+
+  .abilities_content {
+    grid-template-columns: repeat(1, minmax(0px, 1fr));
+  }
+
+  .role_left_content {
+    padding: 0.5em 1em;
+  }
+
+  .role_title {
+    font-size: 0.6em;
+    margin: 0.5em 0;
+  }
+  .role_name {
+    font-size: 0.8em;
+  }
+
+  .role_image {
+    width: 2em;
+  }
+
+  .role_description {
+    font-size: 0.8em;
+  }
+}
+
+@media (600px <= width < 1024px) {
+  .right_content {
+    margin: auto;
+  }
+
+  .left_content {
+    padding: 0;
+    padding-left: 1.5em;
+  }
+
+  .agent_name {
+    font-size: 3em;
+    margin-top: 1em;
+  }
+
+  .agent_desc {
+    font-size: 0.9em;
+  }
+
+  .abilities_title {
+    font-size: 3em;
+  }
+
+  .abilities_container {
+    padding: 1em 1em;
+  }
+
+  .abilities_content {
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+  }
+
+  .role_description {
+    font-size: 0.7em;
+  }
+
+  .role_left_content {
+    padding: 0.5em 1em;
+  }
+
+  .role_title {
+    font-size: 0.6em;
+    margin: 0.5em 0;
+  }
+  .role_name {
+    font-size: 0.8em;
+  }
+
+  .role_image {
+    width: 2em;
+  }
+}
