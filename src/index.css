@@ -27,7 +27,7 @@ html {
 */
 
 .container {
-  width: 1280px;
+  max-width: 1280px;
   margin: auto;
 }
 
@@ -46,10 +46,14 @@ body {
   height: 100%;
 }
 
-@media (width < 1280px) {
+@media (width < 1024px) {
   .container {
     width: auto;
-    padding: 0 1em;
-    padding-bottom: 2em;
+    /*padding: 0 1em;*/
+    /*padding-bottom: 2em;*/
+  }
+
+  body {
+    font-size: 14px;
   }
 }

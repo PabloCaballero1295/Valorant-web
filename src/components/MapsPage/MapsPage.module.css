@@ -59,3 +59,28 @@
   transition: transform 0.2s;
   transform: scale(1);
 }
+
+@media (width < 600px) {
+  .maps_page_content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .map_name {
+    font-size: 1.75em;
+  }
+
+  .maps_container {
+    grid-template-columns: repeat(1, minmax(0px, 1fr));
+  }
+}
+
+@media (600px <= width < 1024px) {
+  .map_name {
+    font-size: 1.75em;
+  }
+
+  .maps_container {
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+  }
+}
