@@ -11,8 +11,6 @@ export const NavBarButton = ({ text, to }: NavBarButtonProps) => {
 
   const isActiveRoute = (route: string) => {
     if (location.pathname == route) {
-      console.log(location.pathname)
-      console.log(route)
       return true
     }
   }

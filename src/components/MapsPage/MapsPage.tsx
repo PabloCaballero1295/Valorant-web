@@ -1,9 +1,10 @@
 import styles from "./MapsPage.module.css"
 import { Map } from "../../types/map"
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { ScrollRestoration } from "react-router-dom"
 import { Loading } from "../Loading/Loading"
+import { useFetch } from "../../hooks/useFetch"
 
 const blockeMaps = [
   "5914d1e0-40c4-cfdd-6b88-eba06347686c",
@@ -12,23 +13,21 @@ const blockeMaps = [
 ]
 
 export const MapsPage = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState<Map[]>([])
+  const navigate = useNavigate()
+
+  const { data, loading, error } = useFetch<Map[]>(
+    `https://valorant-api.com/v1/maps?language=es-ES`
+  )
 
   useEffect(() => {
-    fetch("https://valorant-api.com/v1/maps?language=es-ES")
-      .then((response) => response.json())
-      .then((maps) => {
-        const map_list: Map[] = maps.data
-
-        setData([...map_list])
-        setIsLoading(false)
-      })
-  }, [])
+    if (error) {
+      navigate("/error")
+    }
+  }, [error, navigate])
 
   return (
     <>
-      {!isLoading && data ? (
+      {!loading && data ? (
         <div className="container container_background">
           <div className={styles.maps_page_content}>
             <div className={styles.maps_title}>Mapas</div>

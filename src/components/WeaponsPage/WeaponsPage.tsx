@@ -2,49 +2,57 @@ import { useEffect, useState } from "react"
 import { Weapon } from "../../types/weapons"
 import styles from "./WeaponsPage.module.css"
 import { Loading } from "../Loading/Loading"
-import { ScrollRestoration } from "react-router-dom"
+import { ScrollRestoration, useNavigate } from "react-router-dom"
+import { useFetch } from "../../hooks/useFetch"
 
 export const WeapongsPage = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState<Weapon[]>([])
   const [groupedItems, setGroupedItems] = useState<Record<string, Weapon[]>>({})
 
   const fixCategoryName = (text: string) => {
     return text.replace("EEquippableCategory::", "")
   }
 
+  const navigate = useNavigate()
+
+  const { data, loading, error } = useFetch<Weapon[]>(
+    `https://valorant-api.com/v1/weapons?language=es-ES`
+  )
+
   useEffect(() => {
-    fetch("https://valorant-api.com/v1/weapons?language=es-ES")
-      .then((response) => response.json())
-      .then((weapons) => {
-        const weapon_list: Weapon[] = weapons.data
-        weapon_list.map((weapon) => {
-          weapon.category = fixCategoryName(weapon.category)
-        })
+    if (!data) {
+      return
+    }
 
-        const grouped = weapon_list.reduce(
-          (grouped: Record<string, Weapon[]>, item) => {
-            const { category } = item
+    const weapon_list: Weapon[] = data
+    weapon_list.map((weapon) => {
+      weapon.category = fixCategoryName(weapon.category)
+    })
 
-            if (!grouped[category]) {
-              grouped[category] = []
-            }
-            grouped[category].push(item)
-            return grouped
-          },
-          {} as Record<string, Weapon[]>
-        )
+    const grouped = weapon_list.reduce(
+      (grouped: Record<string, Weapon[]>, item) => {
+        const { category } = item
 
-        setGroupedItems(grouped)
+        if (!grouped[category]) {
+          grouped[category] = []
+        }
+        grouped[category].push(item)
+        return grouped
+      },
+      {} as Record<string, Weapon[]>
+    )
 
-        setData([...weapon_list])
-        setIsLoading(false)
-      })
-  }, [])
+    setGroupedItems(grouped)
+  }, [data])
+
+  useEffect(() => {
+    if (error) {
+      navigate("/error")
+    }
+  }, [error, navigate])
 
   return (
     <div>
-      {!isLoading && data ? (
+      {!loading && data ? (
         <div className="container container_background">
           {Object.entries(groupedItems).map(([category, itemsInCategory]) => (
             <div key={category} className={styles.weapons_page_container}>

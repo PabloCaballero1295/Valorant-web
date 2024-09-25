@@ -1,35 +1,37 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import styles from "./MapPage.module.css"
 import { useEffect, useState } from "react"
 import { Map } from "../../types/map"
 import { ScrollRestoration } from "react-router-dom"
 import { getURLCoords } from "../../utils/utils"
 import { Loading } from "../Loading/Loading"
+import { useFetch } from "../../hooks/useFetch"
 
 export const MapPage = () => {
   const params = useParams()
-  const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState<Map>()
+  const navigate = useNavigate()
 
   const [urlMap, setUrlMap] = useState("")
 
+  const { data, loading, error } = useFetch<Map>(
+    `https://valorant-api.com/v1/maps/${params.id}?language=es-ES`
+  )
+
   useEffect(() => {
-    fetch(`https://valorant-api.com/v1/maps/${params.id}?language=es-ES`)
-      .then((response) => response.json())
-      .then((map) => {
-        const mapData: Map = map.data
-        if (map.data.coordinates) {
-          console.log(getURLCoords(map.data.coordinates))
-          setUrlMap(getURLCoords(map.data.coordinates))
-        }
-        setData(mapData)
-        setIsLoading(false)
-      })
-  }, [params.id])
+    if (error) {
+      navigate("/error")
+    }
+  }, [error, navigate])
+
+  useEffect(() => {
+    if (data && data.coordinates) {
+      setUrlMap(getURLCoords(data.coordinates))
+    }
+  }, [data])
 
   return (
     <>
-      {!isLoading && data ? (
+      {!loading && data ? (
         <>
           <div
             className={styles.top_content}

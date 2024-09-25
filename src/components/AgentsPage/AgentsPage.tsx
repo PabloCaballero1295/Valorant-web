@@ -1,29 +1,26 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import styles from "./AgentsPage.module.css"
 import { AgentCard } from "../AgentCard/AgentCard"
-import { ScrollRestoration } from "react-router-dom"
+import { ScrollRestoration, useNavigate } from "react-router-dom"
 import { Agent } from "../../types/agent"
 import { Loading } from "../Loading/Loading"
+import { useFetch } from "../../hooks/useFetch"
 
 export const AgentsPage = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState<Agent[]>([])
+  const navigate = useNavigate()
+  const { data, loading, error } = useFetch<Agent[]>(
+    `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=es-ES`
+  )
 
   useEffect(() => {
-    fetch(
-      "https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=es-ES"
-    )
-      .then((response) => response.json())
-      .then((agents) => {
-        const agents_list: Agent[] = agents.data
-        setData([...agents_list])
-        setIsLoading(false)
-      })
-  }, [])
+    if (error) {
+      navigate("/error")
+    }
+  }, [error, navigate])
 
   return (
     <>
-      {data && !isLoading ? (
+      {data && !loading ? (
         <div className="container container_background">
           <div className={styles.agents_container}>
             <div className={styles.agents_title}>AGENTES</div>

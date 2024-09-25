@@ -1,45 +1,30 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Agent } from "../../types/agent"
 import styles from "./AgentPage.module.css"
 import { AbilityCard } from "../AbilityCard/AbilityCard"
 import { ScrollRestoration } from "react-router-dom"
 import { Loading } from "../Loading/Loading"
+import { useFetch } from "../../hooks/useFetch"
 
 export const AgentPage = () => {
   const params = useParams()
-  const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState<Agent>()
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const abortController = new AbortController()
-    setIsLoading(true)
-    fetch(`https://valorant-api.com/v1/agents/${params.id}?language=es-ES`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        return response.json()
-      })
-      .then((agents) => {
-        const agentdata: Agent = agents.data
-        setData(agentdata)
-        setIsLoading(false)
-      })
-      .catch((error) => {
-        console.log(error)
-        navigate("/error")
-      })
-      .finally(() => setIsLoading(false))
+  const { data, loading, error } = useFetch<Agent>(
+    `https://valorant-api.com/v1/agents/${params.id}?language=es-ES`
+  )
 
-    return () => abortController.abort()
-  }, [params.id, navigate])
+  useEffect(() => {
+    if (error) {
+      navigate("/error")
+    }
+  }, [error, navigate])
 
   return (
     <>
-      {!isLoading && data ? (
+      {!loading && data ? (
         <>
           <div className={styles.top_content}>
             <div className="container">
