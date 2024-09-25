@@ -85,7 +85,7 @@
   padding-top: 3em;
   margin-left: 2em;
   margin-right: 2em;
-  width: 100%;
+  width: auto;
   display: flex;
 }
 
@@ -107,4 +107,32 @@
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 0 10px var(--color-1);
+}
+
+@media (width < 600px) {
+  .top_flex {
+    flex-direction: column-reverse;
+  }
+
+  .main_image {
+    width: auto;
+  }
+
+  .tactical_description {
+    margin-bottom: 2em;
+  }
+
+  .map_images {
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .map_top_view_container {
+    width: auto;
+    margin-bottom: 2em;
+  }
+
+  .map_ingame_view_container {
+    width: auto;
+  }
 }
