@@ -1,6 +1,6 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createHashRouter, RouterProvider } from "react-router-dom"
 import { MainLayout } from "./components/MainLayout/MainLayout"
 import { MainPage } from "./components/MainPage/MainPage"
 import "./index.css"
@@ -11,72 +11,69 @@ import { MapPage } from "./components/MapPage/MapPage"
 import { ErrorPage } from "./components/ErrorPage/ErrorPage"
 import { WeapongsPage } from "./components/WeaponsPage/WeaponsPage"
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: (
-        <MainLayout>
-          <MainPage />
-        </MainLayout>
-      ),
-      errorElement: (
-        <MainLayout>
-          <ErrorPage />
-        </MainLayout>
-      ),
-    },
-    {
-      path: "/error",
-      element: (
-        <MainLayout>
-          <ErrorPage />
-        </MainLayout>
-      ),
-    },
-    {
-      path: "/agents",
-      element: (
-        <MainLayout>
-          <AgentsPage />
-        </MainLayout>
-      ),
-    },
-    {
-      path: "/agents/:id",
-      element: (
-        <MainLayout>
-          <AgentPage />
-        </MainLayout>
-      ),
-    },
-    {
-      path: "/maps",
-      element: (
-        <MainLayout>
-          <MapsPage />
-        </MainLayout>
-      ),
-    },
-    {
-      path: "/maps/:id",
-      element: (
-        <MainLayout>
-          <MapPage />
-        </MainLayout>
-      ),
-    },
-    {
-      path: "/weapons",
-      element: (
-        <MainLayout>
-          <WeapongsPage />
-        </MainLayout>
-      ),
-    },
-  ],
-  { basename: "/Valorant-web" }
-)
+const router = createHashRouter([
+  {
+    path: "/",
+    element: (
+      <MainLayout>
+        <MainPage />
+      </MainLayout>
+    ),
+    errorElement: (
+      <MainLayout>
+        <ErrorPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/error",
+    element: (
+      <MainLayout>
+        <ErrorPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/agents",
+    element: (
+      <MainLayout>
+        <AgentsPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/agents/:id",
+    element: (
+      <MainLayout>
+        <AgentPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/maps",
+    element: (
+      <MainLayout>
+        <MapsPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/maps/:id",
+    element: (
+      <MainLayout>
+        <MapPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/weapons",
+    element: (
+      <MainLayout>
+        <WeapongsPage />
+      </MainLayout>
+    ),
+  },
+])
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

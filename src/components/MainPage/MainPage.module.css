@@ -4,7 +4,7 @@
 
 .title {
   font-size: 3em;
-  font-family: fantasy;
+  font-family: "Tungsten-bold";
   text-transform: uppercase;
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -32,7 +32,7 @@
 }
 
 .link_title {
-  font-family: fantasy;
+  font-family: "Tungsten-bold";
   position: relative;
   font-size: 2em;
   padding-top: 0.5rem;

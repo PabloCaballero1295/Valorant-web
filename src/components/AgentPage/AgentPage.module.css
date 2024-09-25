@@ -41,7 +41,7 @@
 }
 
 .agent_name {
-  font-family: fantasy;
+  font-family: "Tungsten-bold";
   font-size: 4em;
   font-style: italic;
   margin-top: 4rem;
@@ -101,6 +101,7 @@
 .role_description {
   margin-left: 1em;
   align-self: center;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .abilities_container {
@@ -108,7 +109,7 @@
 }
 
 .abilities_title {
-  font-family: fantasy;
+  font-family: "Tungsten-bold";
   font-size: 4em;
   margin-top: 2rem;
   margin-bottom: 2rem;

@@ -27,7 +27,7 @@
 
 .name {
   font-size: 4em;
-  font-family: fantasy;
+  font-family: "Tungsten-bold";
   text-transform: uppercase;
   font-style: italic;
   text-align: center;
@@ -48,7 +48,7 @@
 }
 
 .map_image_title {
-  font-family: fantasy;
+  font-family: "Tungsten-bold";
   font-size: 2em;
   text-transform: uppercase;
   text-align: center;

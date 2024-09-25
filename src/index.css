@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "DIN Next W1G";
+  src: local("dinnextw1g"), url("./assets/fonts/dinnextw1g.otf");
+}
+
+@font-face {
+  font-family: "Tungsten-bold";
+  src: local("Tungsten-bold"), url("./assets/fonts/tungsten-bold.woff");
+}
+
 :root {
   --color-1: #fd4556;
   --color-2: #bd3944;
@@ -37,8 +47,7 @@ html {
 }
 
 body {
-  /*font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
-  font-family: Roboto, sans-serif;
+  font-family: "DIN Next W1G", Roboto, sans-serif;
   font-size: 16px;
   margin: 0;
   width: 100%;
